@@ -35,7 +35,7 @@ var sss=document.querySelector('canvas')
         function autopilot(){if(bx<hx && bx<hx+200){moveh(2)}; if(bx>hx+200 && bx>hx){moveh(1)}}
         function ball(){
         	
-        	if(scr<200){window.requestAnimationFrame(ball)}
+        	if(scr<200 && by<900){window.requestAnimationFrame(ball)}
         	can.clearRect(0,0,700,700)
             for(var i=0; i<no; i++){oblist[i].create()}
         	can.beginPath()
@@ -47,6 +47,11 @@ var sss=document.querySelector('canvas')
             if(hx+200>700){hx=499}
             if(hx<0){hx=1}
             if(bx+5>700 || bx-5<0){dbx=-dbx}
+            if(by>900){
+                document.getElementById('win').innerHTML="YOU LOSE";
+                document.getElementById('win').style.visibility="visible"
+                document.getElementById('youlose').play()
+            }
             if(by-5<0){dby=-dby}
             if(scr==200){
                 document.getElementById('youwin').play()
