@@ -1,0 +1,50 @@
+<html>
+<head>
+
+	<style>
+		canvas{
+			border: 1px solid black;
+			position: relative;
+			left: 30%;
+		}
+		div.controls{
+			position: relative;
+			left: 30%;
+		}
+		button{
+			width: 100px;
+			height: 50px;
+			position: relative;
+			left: 25%
+		}
+		h1{
+			position: relative;
+			left: 30%;
+		}
+		#win{
+			visibility: hidden;
+			position: relative;
+			left: 35%;
+			top: -50%;
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<audio src="./sounds/hit.mp3" id="hit"></audio>
+	<audio src="./sounds/shatter.mp3" id="shatter"></audio>
+	<audio src="./sounds/youwin.mp3" id="youwin"></audio>
+	<script src="./script/logic.js">
+	</script>
+</body>
+<p></p>
+<div class="controls">
+<button onclick="moveh(2)"></button>
+
+<button onclick="moveh(1)"></button>
+</div>
+<p></p>
+<h1 id="scorebar">score: 0</h1>
+<p id="win">YOU WIN</p>
+</html>
